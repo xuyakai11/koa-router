@@ -4,9 +4,9 @@
 
 > [koa](https://github.com/koajs/koa)的路由中间件
 
-* Express-style routing using `app.get`, `app.put`, `app.post`, etc.
-* Named URL parameters.
-* Named routes with URL generation.
+* Express风格的路由，使用 app.get、app.put、app.post等等
+* 命名URL参数
+* 支持URL生成的命名路由
 * Responds to `OPTIONS` requests with allowed methods.
 * Support for `405 Method Not Allowed` and `501 Not Implemented`.
 * Multiple route middleware.
