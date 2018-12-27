@@ -48,20 +48,20 @@ npm install koa-router
 <a name="exp_module_koa-router--Router"></a>
 
 ### Router ⏏
-**Kind**: Exported class  
+**方式**: 导出类 
 <a name="new_module_koa-router--Router_new"></a>
 
 #### new Router([opts])
-Create a new router.
+创建一个新的路由.
 
 
-| Param | Type | Description |
+| 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | [opts] | <code>Object</code> |  |
 | [opts.prefix] | <code>String</code> | prefix router paths |
 
-**Example**  
-Basic usage:
+**例子**  
+基础用法:
 
 ```javascript
 var Koa = require('koa');
@@ -87,7 +87,7 @@ as `router.get()` or `router.post()`.
 Match URL patterns to callback functions or controller actions using `router.verb()`,
 where **verb** is one of the HTTP verbs such as `router.get()` or `router.post()`.
 
-Additionaly, `router.all()` can be used to match against all methods.
+另外, `router.all()` 匹配所有类型的请求方式.
 
 ```javascript
 router
@@ -107,19 +107,16 @@ router
     // ...
   });
 ```
+当路由被匹配时，它的路径在`ctx._matchedRoute`中是可用的，同时如果该路由被命名，路由名称`ctx._matchedRoute`中也是可用的
 
-When a route is matched, its path is available at `ctx._matchedRoute` and if named,
-the name is available at `ctx._matchedRouteName`
+路由路径会通过[path-to-regexp](https://github.com/pillarjs/path-to-regexp)转化为正则表达式.
 
-Route paths will be translated to regular expressions using
-[path-to-regexp](https://github.com/pillarjs/path-to-regexp).
+匹配请求的时候字符串查询会被忽略
 
-Query strings will not be considered when matching requests.
 
-#### Named routes
+#### 命名路由
 
-Routes can optionally have names. This allows generation of URLs and easy
-renaming of URLs during development.
+可以灵活的命名路由名称. 在开发时允许生成URL和重命名URL.
 
 ```javascript
 router.get('user', '/users/:id', (ctx, next) => {
@@ -130,9 +127,9 @@ router.url('user', 3);
 // => "/users/3"
 ```
 
-#### Multiple middleware
+#### 多个中间件
 
-Multiple middleware may be given:
+可以同时使用多个中间件:
 
 ```javascript
 router.get(
@@ -150,9 +147,9 @@ router.get(
 );
 ```
 
-### Nested routers
+### 嵌套路由
 
-Nesting routers is supported:
+支持嵌套路由:
 
 ```javascript
 var forums = new Router();
