@@ -107,7 +107,7 @@ router
     // ...
   });
 ```
-当路由被匹配时，它的路径在`ctx._matchedRoute`中是可用的，同时如果该路由被命名，路由名称`ctx._matchedRoute`中也是可用的
+当路由被匹配时，它的路径在`ctx._matchedRoute`中是可用的，同时如果该路由被命名，路由名称在`ctx._matchedRoute`中也是可用的
 
 路由路径会通过[path-to-regexp](https://github.com/pillarjs/path-to-regexp)转化为正则表达式.
 
