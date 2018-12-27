@@ -7,31 +7,27 @@
 * Express风格的路由，使用 app.get、app.put、app.post等等
 * 命名URL参数
 * 支持URL生成的命名路由
-* Responds to `OPTIONS` requests with allowed methods.
-* Support for `405 Method Not Allowed` and `501 Not Implemented`.
-* Multiple route middleware.
-* Multiple routers.
-* Nestable routers.
-* ES7 async/await support.
+* 通过允许的请求方式响应`OPTIONS`请求.
+* 支持状态码`405`请求方法不被允许 和 `501`未执行.
+* 多个路由中间件.
+* 多重路由.
+* 可嵌套路由.
+* 支持ES7的async/await.
 
-## Migrating to 7 / Koa 2
+## 迁移至 7 / Koa 2
+- 当前API已经做了修改，以适配新的基于promise的koa2中间件用法
+- 查看[koa 2.x readme](https://github.com/koajs/koa/tree/2.0.0-alpha.3)了解更多信息.
+- 中间件总是按照'.use()'或者.get()等的声明顺序执行，同样也适用于Express 4的API
 
-- The API has changed to match the new promise-based middleware
-  signature of koa 2. See the
-  [koa 2.x readme](https://github.com/koajs/koa/tree/2.0.0-alpha.3) for more
-  information.
-- Middleware is now always run in the order declared by `.use()` (or `.get()`,
-  etc.), which matches Express 4 API.
+## 安装
 
-## Installation
-
-Install using [npm](https://www.npmjs.org/):
+使用 [npm](https://www.npmjs.org/)安装:
 
 ```sh
 npm install koa-router
 ```
 
-## API Reference
+## API 参考
   
 * [koa-router](#module_koa-router)
     * [Router](#exp_module_koa-router--Router) ⏏
